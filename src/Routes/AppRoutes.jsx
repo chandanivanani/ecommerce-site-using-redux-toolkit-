@@ -38,8 +38,7 @@ const AppRoutes = () => {
         // { path: "products/:id", element: <ProductDetails/> },
       ],
     },
-    
-        { path:"*", element: <NotFound/>} ,
+    { path:"*", element: <NotFound/>} ,
   ]);
   return routes;
 };
