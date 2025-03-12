@@ -79,7 +79,7 @@ const HomePage = () => {
           <button className="btn btn-primary w-100" onClick={applyFilter}>
             Apply Filters
           </button>
-        </div>
+           </div>
 
         {/* Product List */}
         <div className="col-md-9">
