@@ -1,30 +1,23 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_BASE_URL= import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const fetchProductsByCategory = createAsyncThunk(
-    "products/fetchByCategory", 
-     async (categoryId, { rejectWithValue }) => {
-        try {
-            const {data} = await axios.get(`${API_BASE_URL}/categories/${categoryId}/products`);
-            return data;
-        } catch (error) {
-            return rejectWithValue(error.response?.data || "failed to fetch products");
-        }
-});
-
-// export const fetchProductById = createAsyncThunk(
-//    "products/fetchById",
-//    async(productId, {rejectWithValue}) => {
-//     try {
-//         const {data} = axios.get(`${API_BASE_URL}/products/${productId}`);
-//         return data;
-//     } catch (error) {
-//         return rejectWithValue(error.response?.data || "Failed to fetch product");
-//     }
-//    }
-// );
+  "products/fetchByCategory",
+  async (categoryId, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(
+        `${API_BASE_URL}/categories/${categoryId}/products`
+      );
+      return data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data || "failed to fetch products"
+      );
+    }
+  }
+);
 
 const productSlice = createSlice({
     name:"products",
