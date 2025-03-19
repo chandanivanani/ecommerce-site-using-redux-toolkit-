@@ -8,7 +8,7 @@ import NotFound from "../pages/NotFound";
 import CategoryList from "../pages/CategoryList";
 import CategoryProduct from "../pages/CategoryProduct";
 import { useSelector } from "react-redux";
-// import ProductDetails from "../pages/ProductDetails";
+import ProductDetails from "../pages/ProductDetails";
 
 const AppRoutes = () => {
   const token = useSelector((state) => state.auth.token);
@@ -35,7 +35,7 @@ const AppRoutes = () => {
       children: [
         { path: "categories", element: <CategoryList/> },
         { path: "categories/:id", element: <CategoryProduct/> },
-        // { path: "products/:id", element: <ProductDetails/> },
+        { path: "products/:id", element: <ProductDetails/> },
       ],
     },
     { path:"*", element: <NotFound/>} ,

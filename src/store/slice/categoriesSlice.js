@@ -6,7 +6,7 @@ const CATE_FETCH = `${API_BASE_URL}/categories`;
 
 export const fetchCategories = createAsyncThunk("categories/fetch", async () => {
    const response = await axios.get(CATE_FETCH);
-   console.log(response.data);
+//    console.log(response.data);
    return response.data;
 });
 
@@ -41,7 +41,7 @@ const categoriesSlice = createSlice({
            .addCase(fetchCategories.fulfilled, (state,action) => {
                state.loading = false;
                state.categories = action?.payload;
-               console.log("cat",state.categories);
+            //    console.log("cat",state.categories);
            })
            .addCase(fetchCategories.rejected, (state,action)=>{
                 state.loading = false;

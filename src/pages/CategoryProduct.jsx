@@ -11,6 +11,7 @@ const CategoryProduct = () => {
   const dispatch = useDispatch();
 
   const { products, category,loading } = useSelector((state) => state.products);
+console.log("p",products);
 
   useEffect(() => {
     if(id) dispatch(fetchProductsByCategory(id));
